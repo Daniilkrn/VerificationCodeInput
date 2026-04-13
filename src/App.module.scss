@@ -1,6 +1,82 @@
 .root {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
+  background: linear-gradient(
+    165deg,
+    #0a0f1a 0%,
+    #111827 38%,
+    #0f172a 72%,
+    #082f49 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
-  padding: 2rem;
+  min-height: calc(100vh - 4rem);
+
+  .authFlow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .codeSent {
+    margin: 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    max-width: 22rem;
+    line-height: 1.45;
+
+    strong {
+      color: #f8fafc;
+      word-break: break-all;
+    }
+  }
+
+  .linkBtn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #93c5fd;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #bfdbfe;
+    }
+  }
+
+  .contentCodeSuccess {
+      border-radius: 20px;
+      border: 1px solid #e6e6e6;
+      background-color: #ffffff;
+      padding: 30px;
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+
+      animation: contentCodeSuccess 0.75s ease-in;
+
+      @keyframes contentCodeSuccess {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+  }
 }
